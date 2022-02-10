@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css.css">
+    <title>Selecione seus Personagens</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Selecione o seu Personagem</h2>
+        </div>
+        <div class="inputs">
+            <input type="text" id="adicionarNomes" placeholder="Escreva o nome">
+            <input type="text" id="excluirNomes" placeholder="Excluir nome">
+
+        </div>
+        <div class="select">
+            <select>
+                <option value="valor1" selected>Personagens Selecionados</option>
+                <option value="valor2" id="listarNomes"></option>
+                <option value="valor2" id="listarNomes"></option>
+
+            </select>
+        </div>
+        <div class="btn">
+            <button onclick="salvarNomeLocalStorage()">Adicionar Personagem</button>
+            <button onclick="excluirNomeLocalStorage()">Excluir Personagem</button>
+        </div>
+    </div>
+
+    <script src="./localStorageKNY.js"></script>
+</body>
+</html>
