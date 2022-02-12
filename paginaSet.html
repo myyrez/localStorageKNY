@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css.css">
-    <title>Selecione seus Personagens</title>
+    <title>KNY: Crie seu Personagem</title>
 </head>
 <body>
     <div class="container">
@@ -13,24 +13,29 @@
             <h2>Selecione o seu Personagem</h2>
         </div>
         <div class="inputs">
-            <input type="text" id="adicionarNomes" placeholder="Escreva o nome">
-            <input type="text" id="excluirNomes" placeholder="Excluir nome">
-
+            <input type="text" id="adicionarNome" placeholder="Escreva o nome">
+            <input type="text" id="oniHumano" placeholder="Oni ou Humano?">
+            <input type="text" id="respiracaoArte" placeholder="Estilo de Respiração/Arte Demoníaca">
+        </div>
+        <div class="btn">
+            <button onclick="salvarLocalStorage()">Salvar personagem</button>
+            <button onclick="voltarPaginaGet()">Já tem um personagem? Pesquisar</button>
         </div>
         <div class="select">
             <select>
-                <option value="valor1" selected>Personagens Selecionados</option>
-                <option value="valor2" id="listarNomes"></option>
-                <option value="valor2" id="listarNomes"></option>
-
+                <option value="" id="dicas" selected>dicas</option>
+                <optgroup label="Estilo de Respiração"></optgroup>
+                <option value="">Sopro das Trovão</option>
+                <option value="">Respiração da Água</option>
+                <option value="">Respiração do Sol</option>
+                <optgroup label="Arte Demoníaca"></optgroup>
+                <option value="">Foices de Sangue Voadoras</option>
+                <option value="">Cortes Rotativos</option>
+                <option value="">Batida de Tambor</option>
             </select>
-        </div>
-        <div class="btn">
-            <button onclick="salvarNomeLocalStorage()">Adicionar Personagem</button>
-            <button onclick="excluirNomeLocalStorage()">Excluir Personagem</button>
         </div>
     </div>
 
-    <script src="./localStorageKNY.js"></script>
+    <script src="./localStorageKNY2.js"></script>
 </body>
 </html>

@@ -1,19 +1,30 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="stylesheet" href="./css.css"> -->
-    <title>Personagens à Mostra</title>
+    <title>KNY: Pesquise seu Personagem</title>
 </head>
+
 <body>
-    <h2>Personagens Selecionados</h2>
+    <input type="text" id="pesquisaLocalStorage" placeholder="pesquise o nome">
 
-    <p></p>
+    <button onclick="pesquisarPersLocalStorage()">Pesquisar personagem</button>
 
-    <p></p>
+    <input type="text" id="adicionarNome2" placeholder="Escreva o nome">
+    <input type="text" id="oniHumano2" placeholder="Oni ou Humano?">
+    <input type="text" id="respiracaoArte2" placeholder="Estilo de Respiração/Arte Demoníaca">
 
-    <script src="./localStorageKNY.js"></script>
+    <img src="" alt="">
+
+    <button onclick="voltarPaginaSet()">Voltar para página inicial</button>
+    <button onclick="excluirPersLocalStorage()">Excluir personagem</button>
+    <button onclick="atualizarPersLocalStorage()">Atualizar personagem</button>
+
+    <script src="./localStorageKNY2.js"></script>
 </body>
+
 </html>
