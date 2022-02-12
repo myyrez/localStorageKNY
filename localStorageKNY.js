@@ -38,8 +38,6 @@ function salvarLocalStorage() {
     // window.location.href = 'paginaGet.html'
 }
 
-
-
 let pesquisaLocalStorage = document.getElementById('pesquisaLocalStorage')
 let adicionarNome2 = document.getElementById('adicionarNome2')
 let oniHumano2 = document.getElementById('oniHumano2')
