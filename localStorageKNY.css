@@ -2,33 +2,91 @@ body {
     background-color: #000;
 }
 
+h2 {
+    align-items: center;
+    margin: auto;
+    width: 50%;
+    ;
+}
+
 .container {
+    background-color: #ffffff10;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    width: 13rem;
+    width: 30%;
     border-radius: 25px;
-    background-color: #fff;
     margin: auto;
     margin-bottom: 5rem;
     margin-top: 5rem;
     padding: 5rem;
-    height: 20rem;
+    height: 16.5rem;
 }
 
 .header {
     background-color: red;
+    margin-top: -4rem;
+    width: 100%;
 }
 
 .inputs {
     background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 10rem;
+    margin-top: 4rem;
 
 }
 
 .select {
-    background-color: violet;
+    position: relative;
+    display: inline-block;
+}
+
+.select-btn {
+    background-color: black;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.select-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.select-content p {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.select-content h3 {
+    color: black;
+    padding: 8px 8px;
+    text-decoration: none;
+    display: block;
+}
+
+.select:hover .select-content {
+    display: block;
+}
+
+.select:hover .select-btn {
+    background-color: #141414fb
 }
 
 .btn {
     background-color: blue;
+    margin-top: 5rem;
 }

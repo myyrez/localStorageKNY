@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,35 +8,36 @@
     <link rel="stylesheet" href="./localStorageKNY.css">
     <title>KNY: Crie seu Personagem</title>
 </head>
+
 <body>
     <div class="container">
         <div class="header">
             <h2>Selecione o seu Personagem</h2>
         </div>
         <div class="inputs">
-            <input type="text" id="adicionarNome" placeholder="Escreva o nome">
-            <input type="text" id="oniHumano" placeholder="Oni ou Humano?">
-            <input type="text" id="respiracaoArte" placeholder="Estilo de Respiração/Arte Demoníaca">
+            <label for="">Nome do Personagem</label>
+            <input type="text" id="adicionarNome">
+            <label for="">Oni ou Humano?</label>
+            <input type="text" id="oniHumano">
+            <label for="">Estilo de Respiração / Arte Demoníaca</label>
+            <input type="text" id="respiracaoArte">
         </div>
         <div class="btn">
             <button onclick="salvarLocalStorage()">Salvar personagem</button>
             <button onclick="voltarPaginaGet()">Já tem um personagem? Pesquisar</button>
         </div>
         <div class="select">
-            <select>
-                <option value="" id="dicas" selected>dicas</option>
-                <optgroup label="Estilo de Respiração"></optgroup>
-                <option value="">Sopro das Trovão</option>
-                <option value="">Respiração da Água</option>
-                <option value="">Respiração do Sol</option>
-                <optgroup label="Arte Demoníaca"></optgroup>
-                <option value="">Foices de Sangue Voadoras</option>
-                <option value="">Cortes Rotativos</option>
-                <option value="">Batida de Tambor</option>
-            </select>
-        </div>
-    </div>
+            <button class="select-btn">Exemplos</button>
+            <div class="select-content">
+                <h3>Estilos de Respiração</h3>
+                <p>Sopro do Trovão</p>
+                <p>Respiração do Sol</p>
+                <h3>Artes Demoníacas</h3>
+                <p>Foices de Sangue</p>
+                <p>Olhos do Sono</p>
+            </div>
 
-    <script src="./localStorageKNY.js"></script>
+            <script src="./localStorageKNY.js"></script>
 </body>
+
 </html>
