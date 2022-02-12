@@ -7,37 +7,38 @@ let vetorOniHumano = []
 let vetorRespiracaoArte = []
 
 function salvarLocalStorage() {
+    vetorAdicionarNome = JSON.parse(localStorage.getItem('chaveAdicionarNome'))
+    vetorOniHumano = JSON.parse(localStorage.getItem('chaveOniHumano'))
+    vetorRespiracaoArte = JSON.parse(localStorage.getItem('chaveRespiracaoArte'))
+
+    if (vetorAdicionarNome == null) {
+        vetorAdicionarNome = []
+        vetorOniHumano = []
+        vetorRespiracaoArte = []
+    }
     if (adicionarNome.value == '' || oniHumano.value == '' || respiracaoArte.value == '') {
         alert('Todos os campos precisam ser preenchidos!')
+        return;
     } else {
-        vetorAdicionarNome = JSON.parse(localStorage.getItem('chaveAdicionarNome'))
-        vetorOniHumano = JSON.parse(localStorage.getItem('chaveOniHumano'))
-        vetorRespiracaoArte = JSON.parse(localStorage.getItem('chaveRespiracaoArte'))
-
-        if (vetorAdicionarNome == null) {
-            vetorAdicionarNome = []
-            vetorOniHumano = []
-            vetorRespiracaoArte = []
-
-            vetorAdicionarNome.push(adicionarNome.value)
-            vetorOniHumano.push(oniHumano.value)
-            vetorRespiracaoArte.push(respiracaoArte.value)
-
-            localStorage.setItem('chaveAdicionarNome', JSON.stringify(vetorAdicionarNome))
-            localStorage.setItem('chaveOniHumano', JSON.stringify(vetorOniHumano))
-            localStorage.setItem('chaveRespiracaoArte', JSON.stringify(vetorRespiracaoArte))
-        } else {
-            vetorAdicionarNome.push(adicionarNome.value)
-            vetorOniHumano.push(oniHumano.value)
-            vetorRespiracaoArte.push(respiracaoArte.value)
-
-            localStorage.setItem('chaveAdicionarNome', JSON.stringify(vetorAdicionarNome))
-            localStorage.setItem('chaveOniHumano', JSON.stringify(vetorOniHumano))
-            localStorage.setItem('chaveRespiracaoArte', JSON.stringify(vetorRespiracaoArte))
+        for (let i = 0; i < vetorAdicionarNome.length; i++) {
+            if (adicionarNome.value == vetorAdicionarNome[i]) {
+                alert('Você já tem um personagem com esse nome.')
+                return;
+            }
         }
-        // window.location.href = 'paginaGet.html'
     }
+    vetorAdicionarNome.push(adicionarNome.value)
+    vetorOniHumano.push(oniHumano.value)
+    vetorRespiracaoArte.push(respiracaoArte.value)
+
+    localStorage.setItem('chaveAdicionarNome', JSON.stringify(vetorAdicionarNome))
+    localStorage.setItem('chaveOniHumano', JSON.stringify(vetorOniHumano))
+    localStorage.setItem('chaveRespiracaoArte', JSON.stringify(vetorRespiracaoArte))
+
+    // window.location.href = 'paginaGet.html'
 }
+
+
 
 let pesquisaLocalStorage = document.getElementById('pesquisaLocalStorage')
 let adicionarNome2 = document.getElementById('adicionarNome2')
@@ -58,7 +59,7 @@ function pesquisarPersLocalStorage() {
         }
     }
     if (adicionarNome2.value == '') {
-        alert('não encontramos nenhum personagem com esse nome :(')
+        alert('não encontramos nenhum personagem com esse nome... :(')
     }
 }
 
@@ -89,25 +90,33 @@ function excluirPersLocalStorage() {
 function atualizarPersLocalStorage() {
     if (adicionarNome2.value == '' || oniHumano2.value == '' || respiracaoArte2.value == '') {
         alert("por favor, preencha os campos!")
+        return;
     } else {
+        for (i = 0; i < vetorAdicionarNome.length; i++) {
+            if (adicionarNome2.value == vetorAdicionarNome[i]) {
+                alert('Você já tem um personagem com esse nome.')
+                return;
+            }
+        }
         vetorAdicionarNome = JSON.parse(localStorage.getItem('chaveAdicionarNome'))
         vetorOniHumano = JSON.parse(localStorage.getItem('chaveOniHumano'))
         vetorRespiracaoArte = JSON.parse(localStorage.getItem('chaveRespiracaoArte'))
 
         for (i = 0; i < vetorAdicionarNome.length; i++) {
-            if (pesquisaLocalStorage.value = vetorAdicionarNome[i]) {
+            if (pesquisaLocalStorage.value == vetorAdicionarNome[i]) {
 
                 vetorAdicionarNome.splice([i], 1, adicionarNome2.value)
                 vetorOniHumano.splice([i], 1, oniHumano2.value)
                 vetorRespiracaoArte.splice([i], 1, respiracaoArte2.value)
             }
         }
-        localStorage.setItem('chaveAdicionarNome', JSON.stringify(vetorAdicionarNome))
-        localStorage.setItem('chaveOniHumano', JSON.stringify(vetorOniHumano))
-        localStorage.setItem('chaveRespiracaoArte', JSON.stringify(vetorRespiracaoArte))
 
-        window.location.href = 'paginaGet.html'
     }
+    localStorage.setItem('chaveAdicionarNome', JSON.stringify(vetorAdicionarNome))
+    localStorage.setItem('chaveOniHumano', JSON.stringify(vetorOniHumano))
+    localStorage.setItem('chaveRespiracaoArte', JSON.stringify(vetorRespiracaoArte))
+
+    window.location.href = 'paginaGet.html'
 }
 
 function voltarPaginaSet() {
