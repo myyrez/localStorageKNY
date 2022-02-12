@@ -35,7 +35,7 @@ function salvarLocalStorage() {
     localStorage.setItem('chaveOniHumano', JSON.stringify(vetorOniHumano))
     localStorage.setItem('chaveRespiracaoArte', JSON.stringify(vetorRespiracaoArte))
 
-    // window.location.href = 'paginaGet.html'
+    window.location.href = 'paginaGet.html'
 }
 
 let pesquisaLocalStorage = document.getElementById('pesquisaLocalStorage')
@@ -96,18 +96,16 @@ function atualizarPersLocalStorage() {
                 return;
             }
         }
-        if (pesquisaLocalStorage.value == adicionarNome2.value) {
-            vetorAdicionarNome = JSON.parse(localStorage.getItem('chaveAdicionarNome'))
-            vetorOniHumano = JSON.parse(localStorage.getItem('chaveOniHumano'))
-            vetorRespiracaoArte = JSON.parse(localStorage.getItem('chaveRespiracaoArte'))
-    
-            for (i = 0; i < vetorAdicionarNome.length; i++) {
-                if (pesquisaLocalStorage.value == vetorAdicionarNome[i]) {
-    
-                    vetorAdicionarNome.splice([i], 1, adicionarNome2.value)
-                    vetorOniHumano.splice([i], 1, oniHumano2.value)
-                    vetorRespiracaoArte.splice([i], 1, respiracaoArte2.value)
-                }
+        vetorAdicionarNome = JSON.parse(localStorage.getItem('chaveAdicionarNome'))
+        vetorOniHumano = JSON.parse(localStorage.getItem('chaveOniHumano'))
+        vetorRespiracaoArte = JSON.parse(localStorage.getItem('chaveRespiracaoArte'))
+
+        for (i = 0; i < vetorAdicionarNome.length; i++) {
+            if (pesquisaLocalStorage.value == vetorAdicionarNome[i]) {
+
+                vetorAdicionarNome.splice([i], 1, adicionarNome2.value)
+                vetorOniHumano.splice([i], 1, oniHumano2.value)
+                vetorRespiracaoArte.splice([i], 1, respiracaoArte2.value)
             }
         }
     }
