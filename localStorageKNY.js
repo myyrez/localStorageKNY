@@ -93,24 +93,25 @@ function atualizarPersLocalStorage() {
         return;
     } else {
         for (i = 0; i < vetorAdicionarNome.length; i++) {
-            if (adicionarNome2.value == vetorAdicionarNome[i]) {
+            if (adicionarNome2.value == vetorAdicionarNome[i] && adicionarNome2.value != pesquisaLocalStorage.value) {
                 alert('Você já tem um personagem com esse nome.')
                 return;
             }
         }
-        vetorAdicionarNome = JSON.parse(localStorage.getItem('chaveAdicionarNome'))
-        vetorOniHumano = JSON.parse(localStorage.getItem('chaveOniHumano'))
-        vetorRespiracaoArte = JSON.parse(localStorage.getItem('chaveRespiracaoArte'))
-
-        for (i = 0; i < vetorAdicionarNome.length; i++) {
-            if (pesquisaLocalStorage.value == vetorAdicionarNome[i]) {
-
-                vetorAdicionarNome.splice([i], 1, adicionarNome2.value)
-                vetorOniHumano.splice([i], 1, oniHumano2.value)
-                vetorRespiracaoArte.splice([i], 1, respiracaoArte2.value)
+        if (pesquisaLocalStorage.value == adicionarNome2.value) {
+            vetorAdicionarNome = JSON.parse(localStorage.getItem('chaveAdicionarNome'))
+            vetorOniHumano = JSON.parse(localStorage.getItem('chaveOniHumano'))
+            vetorRespiracaoArte = JSON.parse(localStorage.getItem('chaveRespiracaoArte'))
+    
+            for (i = 0; i < vetorAdicionarNome.length; i++) {
+                if (pesquisaLocalStorage.value == vetorAdicionarNome[i]) {
+    
+                    vetorAdicionarNome.splice([i], 1, adicionarNome2.value)
+                    vetorOniHumano.splice([i], 1, oniHumano2.value)
+                    vetorRespiracaoArte.splice([i], 1, respiracaoArte2.value)
+                }
             }
         }
-
     }
     localStorage.setItem('chaveAdicionarNome', JSON.stringify(vetorAdicionarNome))
     localStorage.setItem('chaveOniHumano', JSON.stringify(vetorOniHumano))
