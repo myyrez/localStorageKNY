@@ -2,6 +2,11 @@ let adicionarNome = document.getElementById('adicionarNome')
 let oniHumano = document.getElementById('oniHumano')
 let respiracaoArte = document.getElementById('respiracaoArte')
 
+let pesquisaLocalStorage = document.getElementById('pesquisaLocalStorage')
+let adicionarNome2 = document.getElementById('adicionarNome2')
+let oniHumano2 = document.getElementById('oniHumano2')
+let respiracaoArte2 = document.getElementById('respiracaoArte2')
+
 let vetorAdicionarNome = []
 let vetorOniHumano = []
 let vetorRespiracaoArte = []
@@ -38,11 +43,6 @@ function salvarLocalStorage() {
     window.location.href = 'paginaGet.html'
 }
 
-let pesquisaLocalStorage = document.getElementById('pesquisaLocalStorage')
-let adicionarNome2 = document.getElementById('adicionarNome2')
-let oniHumano2 = document.getElementById('oniHumano2')
-let respiracaoArte2 = document.getElementById('respiracaoArte2')
-
 function pesquisarPersLocalStorage() {
     vetorAdicionarNome = JSON.parse(localStorage.getItem('chaveAdicionarNome'))
     vetorOniHumano = JSON.parse(localStorage.getItem('chaveOniHumano'))
@@ -58,6 +58,19 @@ function pesquisarPersLocalStorage() {
     }
     if (adicionarNome2.value == '') {
         alert('não encontramos nenhum personagem com esse nome... :(')
+    }
+    switch (true) {
+        case adicionarNome2.value == 'zenitsu' || adicionarNome2.value == 'zenitsu agatsuma':
+            img.src = 'https://media1.giphy.com/media/fTn01fiFdTd5pL60ln/200w.webp?cid=ecf05e47n4snh9lgkdpqkxn76hf18ry49jh1kb6qjv3186jo&rid=200w.webp&ct=g.gif'
+            break;
+
+        case adicionarNome2.value == 'tanjiro' || adicionarNome2.value == 'tanjiro kamado':
+            img.src = 'https://media1.giphy.com/media/J6JazAkCVLId91L4yM/200w.webp?cid=ecf05e47mzoekl8a1vpv2w65ehcw6tequz28nc6qwvnq9qgx&rid=200w.webp&ct=g.gif'
+            break;
+
+        case adicionarNome2.value == 'inosuke' || adicionarNome2.value == 'inosuke hashibira':
+            img.src = 'https://media2.giphy.com/media/tjeICfdc4yGNpp07SV/200w.webp?cid=ecf05e475zfyw4y7bbm12n4qd9rl1wdqmp2urqa9taevpdwo&rid=200w.webp&ct=g.gif'
+            break;
     }
 }
 
