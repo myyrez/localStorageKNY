@@ -5,24 +5,66 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="./localStorageKNY.css"> -->
+    <link rel="stylesheet" href="./localStorageKNY.css">
+    <link href="https://fonts.googleapis.com/css2?family=Gideon+Roman&family=Roboto+Serif:wght@100&display=swap"
+    rel="stylesheet">
+<link
+    href="https://fonts.googleapis.com/css2?family=Gideon+Roman&family=Redressed&family=Roboto+Serif:wght@100&family=Shizuru&display=swap"
+    rel="stylesheet">
     <title>KNY: Pesquise seu Personagem</title>
 </head>
 
 <body>
-    <input type="text" id="pesquisaLocalStorage" placeholder="pesquise o nome">
+    <header>
+        <h2>Pesquisa de Personagens</h2>
+    </header>
 
-    <button onclick="pesquisarPersLocalStorage()">Pesquisar personagem</button>
+    <div class="fundoblur">
+        <section>
+            <div class="container">
+                <div class="label">
+                    <label for="">Procurar Nome do Personagem:</label>
+                </div>
 
-    <input type="text" id="adicionarNome2" placeholder="Escreva o nome">
-    <input type="text" id="oniHumano2" placeholder="Oni ou Humano?">
-    <input type="text" id="respiracaoArte2" placeholder="Estilo de Respiração/Arte Demoníaca">
+                <input class="inputs" type="text" id="pesquisaLocalStorage">
 
-    <img src="" alt="">
+                <div class="btn">
+                    <button class="btn" onclick="pesquisarPersLocalStorage()">Pesquisar personagem</button>
+                </div>
 
-    <button onclick="voltarPaginaSet()">Voltar para página inicial</button>
-    <button onclick="excluirPersLocalStorage()">Excluir personagem</button>
-    <button onclick="atualizarPersLocalStorage()">Atualizar personagem</button>
+                <div class="label">
+                    <label for="">Nome:</label>
+                </div>
+
+                <input class="inputs" type="text" id="adicionarNome2">
+
+                <div class="label">
+                    <label for="">Oni ou Humano:</label>
+                </div>
+
+                <input class="inputs" type="text" id="oniHumano2">
+
+                <div class="label">
+                    <label for="">Estilo de Respiração / Arte Demoníaca:</label>
+                </div>
+
+                <input class="inputs" type="text" id="respiracaoArte2">
+        </section>
+        <section>
+            <img id="img" src="https://media1.giphy.com/media/fTn01fiFdTd5pL60ln/200w.webp?cid=ecf05e47n4snh9lgkdpqkxn76hf18ry49jh1kb6qjv3186jo&rid=200w.webp&ct=g.gif" alt="imagem">
+        </section>
+        <section>
+            <div class="btn">
+                <button class="btn" onclick="voltarPaginaSet()">Voltar para página inicial</button>
+            </div>
+            <div class="btn">
+            <button class="btn" onclick="excluirPersLocalStorage()">Excluir personagem</button>
+            </div>
+            <div class="btn">
+            <button class="btn" onclick="atualizarPersLocalStorage()">Atualizar personagem</button>
+            </div>
+        </section>
+    </div>
 
     <script src="./localStorageKNY.js"></script>
 </body>
